@@ -51,6 +51,7 @@ function Gameboard(props) {
 
   const gameOver = () => {
     setIsGameOver(true)
+    props.checkForHighScore()
     setIsGameStarted(false)
   }
 

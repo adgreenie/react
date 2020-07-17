@@ -2,9 +2,26 @@ import React from "react"
 import PulseLoader from "react-spinners/PulseLoader"
 
 function Leaderboard(props) {
-  //console.log('Leaderboard - props.gameView',props.gameView)
-
   let scoreList = []
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ]
+
+  const date = new Date()
+
+  const month = months[date.getMonth()]
 
   if (props.highScores) {
     let fontSize = props.gameView ? 24 : 42
@@ -30,7 +47,7 @@ function Leaderboard(props) {
   if (props.gameView) {
     return (
       <div className="leaderboard" id="in-game-leaderboard">
-        <h2>Leaderboard</h2>
+        <h2>{month}'s Leaders</h2>
         <hr />
         {scoreList ? <ul>{scoreList}</ul> : <PulseLoader color={"#69c07e"} />}
       </div>
@@ -39,7 +56,7 @@ function Leaderboard(props) {
     return (
       <div className="leaderboard" id="full-leaderboard">
         <div>
-          <h1>Wall of Glory</h1>
+          <h1>{month}'s Leaders</h1>
           <hr />
         </div>
         {scoreList ? <ul>{scoreList}</ul> : <PulseLoader color={"#69c07e"} />}
