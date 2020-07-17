@@ -33,7 +33,7 @@ function Leaderboard(props) {
       <div className="leaderboard" id="in-game-leaderboard">
         <h2>Leaderboard</h2>
         <hr />
-        <ul>{scoreList}</ul>
+        {scoreList ? <ul>{scoreList}</ul> : <PulseLoader color={"#69c07e"} />}
       </div>
     )
   } else {
