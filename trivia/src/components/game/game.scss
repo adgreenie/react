@@ -136,6 +136,12 @@ h3 {
   padding: 15px;
 }
 
+#start-button {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  width: 150px;
+}
+
 #in-game-leaderboard {
   display: none;
 
